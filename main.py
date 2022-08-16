@@ -6,7 +6,7 @@ contact_finder = Flask(__name__)
 
 contact_finder.config["SECRET_KEY"] = "5b67e0f2050ef0afe2737e9d8320e6e1"
 contact_finder.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contacts.db'
-contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1)
+contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 db = SQLAlchemy(contact_finder)
 
@@ -32,7 +32,11 @@ def login():
             return redirect(url_for("search"))
         else:
             return redirect(url_for("login"))
-    return render_template("login.html")
+    else:
+        if "existing_employee" in session:
+            return redirect(url_for("search"))
+        else:
+            return render_template("login.html")
 
 
 @contact_finder.route("/search")

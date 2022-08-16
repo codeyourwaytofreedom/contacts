@@ -1,0 +1,58 @@
+body {
+        margin-top:0;
+        background-color:#6F0319;
+
+     }
+* {box-sizing: border-box;}
+
+.title      {
+            position:relative;
+            height:20%;
+            width:60%;
+            background-image:linear-gradient(#ae7400, #da9100);
+            margin-left:20%;
+            }
+
+
+
+.results {
+                height: 80%;
+                width:60%;
+                margin-left:20%;
+                background-image:linear-gradient(#da9100, #ffaf12);
+         }
+
+.search_box {
+                position:absolute;
+                width:70%; height:40%;
+                font-size:1.6vw;
+                padding-left: 5%;
+                border-radius: 5em;
+                top:40%; left: 15%;
+                border: 2px solid #FFD700;
+                outline: none;
+
+            }
+
+.employee_info {
+            position:relative;
+            border: 2px solid red;
+            height: 25%;
+
+            }
+            .photo {
+                    border: 2px solid black;
+                    width:30%;
+                    height:100%;
+                   }
+            .contact_details {
+                    position:absolute;
+                    border: 2px solid white;
+                    width:70%; height:100%;
+                    top:0;
+                    right: 0;
+                    }
+            .contact_details > p {
+                            color:white;
+                            font-size: 1.5vw;
+                            }
