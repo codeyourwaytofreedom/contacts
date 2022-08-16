@@ -6,16 +6,13 @@ html, body {
 
 *{box-sizing:border-box;}
 
-
 .big-box {
                 position: relative;
-                width:40%;
-                height:90%;
-                left: 30%;
+                width:40%;  min-width: 300px;
+                height:90%; min-height: 400px; max-height: 700px;
+                margin:auto;
                 top:5%;
-                border: 1px solid black;
           }
-
 
 .sun        {
             background-image: url("/static/sun.svg");
@@ -24,8 +21,6 @@ html, body {
             background-repeat: no-repeat;
             z-index:0;
             }
-
-
 
 .login_div {
             position: absolute;
@@ -74,10 +69,43 @@ html, body {
                 }
 
 
-
 @media all and (max-width:600px) {
 
 
                             .email::placeholder,.password::placeholder {
                                 font-size:3.4vw;
                                 }
+                            .big-box {
+                                        border: 2px solid blue;
+                                        width:70%;
+                                       }
+                            .login_div {
+                                        width:90%;
+                                        left: 3%;
+                                        }
+                            @media (orientation: landscape) {
+
+                                .big-box {
+                                            width:60%;  min-width: 200px;
+                                            height:95%; min-height:300px;
+                                            top:1%;
+                                            border: 2px solid black;
+                                        }
+                                .email::placeholder,.password::placeholder {
+                                             font-size:2.4vw;
+                                                                            }
+                                .email, .password {
+                                                    top: 30%;
+                                                    height: 12%;
+                                                    width:90%; left:5%;
+                                                    }
+
+                                .login_button        {
+                                                    height:10%;
+                                                    top:60%;
+                                                    }
+
+                                }
+                            }
+
+
