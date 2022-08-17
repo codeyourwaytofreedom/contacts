@@ -86,8 +86,8 @@ html, body {
                             @media (orientation: landscape) {
 
                                 .big-box {
-                                            width:60%;  min-width: 200px;
-                                            height:95%; min-height:300px;
+                                            width:60%;
+                                            height:95%;
                                             top:1%;
                                             border: 2px solid black;
                                         }
