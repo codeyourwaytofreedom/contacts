@@ -10,6 +10,7 @@ contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 db = SQLAlchemy(contact_finder)
 
+test = ["John", "006900000", "6969", "john@freedom.free", "Finance Department"]
 
 class employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -42,7 +43,7 @@ def login():
 @contact_finder.route("/search")
 def search():
     if 'existing_employee' in session:
-        return render_template("search.html")
+        return render_template("search.html",test=test)
     else:
         return redirect(url_for("login"))
 

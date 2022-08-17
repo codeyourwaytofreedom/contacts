@@ -10,11 +10,28 @@
 
 
 <div class="title">
+        <div class="checkbox_row">
 
+                            <div class="checkbox1">
+                  <input type="checkbox" id="name" name="fruit-1" value="name">
+                  <label for="name">Search by name!</label>
+        </div>
+        <div class="checkbox2">
+                  <input type="checkbox" id="dep" name="fruit-1" value="name">
+                  <label for="dep">Search by department!</label>
+        </div>
+
+        </div>
+
+
+
+
+
+    <form action="/" method="POST">
     <div class="row">
         <input placeholder="search for...." class="search_box">
     </div>
-
+    </form>
 </div>
 
 <div class="results">
@@ -26,19 +43,20 @@
         </div>
 
         <div class="contact_details">
-            <p>mobile</p>
-            <p>extension</p>
-            <p>email</p>
+            <div>Name</div><div>{{test[0]}}</div>
+            <div>Mobile</div><div>{{test[1]}}</div>
+            <div>Extension</div><div>{{test[2]}}</div>
+            <div>Email</div><div>{{test[3]}}</div>
+            <div>Department</div><div>{{test[4]}}</div>
         </div>
 
     </div>
-
 
 </div>
 
 
 
-
+<script src="search.js"></script>
 
 
 
