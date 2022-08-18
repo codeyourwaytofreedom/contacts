@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import  timedelta
+from datetime import timedelta
 
 contact_finder = Flask(__name__)
 
@@ -10,15 +10,18 @@ contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 db = SQLAlchemy(contact_finder)
 
-test = ["John", "006900000", "6969", "john@freedom.free", "Finance Department"]
 
 class employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
+    name = db.Column(db.String(30), nullable=False)
+    surname = db.Column(db.String(30), nullable=False)
+    email = db.Column(db.String(50), unique=True, nullable=False)
+    department = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(30), nullable=False)
+
 
     def __repr__(self):
-        return f"employee('{self.id}','{self.email}', '{self.password}')"
+        return f"employee('{self.id}','{self.name}','{self.email}', '{self.department}')"
 
 
 @contact_finder.route("/", methods=['POST', 'GET'])
@@ -44,16 +47,29 @@ def login():
 def search():
     if 'existing_employee' in session:
         if request.method == "POST" and request.form.get("checkbox") == "name":
-            print(5)
-            return redirect(url_for("search"))
+            names_found = employee.query.filter_by(name=request.form.get("search_for"))
+            return render_template("search.html",test=names_found)
         elif request.method == "POST" and request.form.get("checkbox") == "department":
-            print(10)
-            return redirect(url_for("search"))
-        return render_template("search.html",test=test)
+            employees_in_dep = employee.query.filter_by(department=request.form.get("search_for"))
+            return render_template("search.html",test=employees_in_dep)
+        else:
+            return render_template("search.html")
     else:
         return redirect(url_for("login"))
 
 
+# names = ["James", "Robert", "John", "Michael", "David", "William", "Richard", "Joseph", "Thomas", "Charles",
+#          "Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Karen"]
+# surnames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", "Wilson"]
+#
+# x=0
+# for name in names:
+#     addd = employee( name=name.lower(), surname=surnames[x].lower(), email=name+surnames[x]+str(x+1)+'@dell.com',
+#                      department='support', password='123456')
+#     db.session.add(addd)
+#     db.session.commit()
+#     print(addd)
+#     x=x+1
 
 
 
