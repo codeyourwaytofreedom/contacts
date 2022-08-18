@@ -6,7 +6,7 @@ contact_finder = Flask(__name__)
 
 contact_finder.config["SECRET_KEY"] = "5b67e0f2050ef0afe2737e9d8320e6e1"
 contact_finder.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contacts.db'
-contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1)
+contact_finder.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 db = SQLAlchemy(contact_finder)
 
@@ -40,9 +40,15 @@ def login():
             return render_template("login.html")
 
 
-@contact_finder.route("/search")
+@contact_finder.route("/search", methods=['POST', 'GET'])
 def search():
     if 'existing_employee' in session:
+        if request.method == "POST" and request.form.get("checkbox") == "name":
+            print(5)
+            return redirect(url_for("search"))
+        elif request.method == "POST" and request.form.get("checkbox") == "department":
+            print(10)
+            return redirect(url_for("search"))
         return render_template("search.html",test=test)
     else:
         return redirect(url_for("login"))

@@ -10,28 +10,26 @@
 
 
 <div class="title">
+        <form action="search" method="POST">
         <div class="checkbox_row">
 
         <div class="checkbox1">
-                  <input type="checkbox" id="name" name="fruit-1" value="name" checked>
+                  <input type="checkbox" id="name" name="checkbox" value="name" checked>
                   <label for="name">Search by name!</label>
         </div>
         <div class="checkbox2">
-                  <input type="checkbox" id="dep" name="fruit-1" value="name">
+                  <input type="checkbox" id="dep" name="checkbox" value="department">
                   <label for="dep">Search by department!</label>
         </div>
 
         </div>
 
-
             <div class="row">
-                <form action="/" method="POST">
 
-                    <input placeholder="search by employee" class="search_box">
 
-                </form>
+                    <input name="search_for" placeholder="search by employee" class="search_box">
             </div>
-
+        </form>
  </div>
 <div class="results">
 

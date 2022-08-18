@@ -37,19 +37,17 @@ body {
 .employee_info {
             position:relative;
             border: 2px solid white;
-            height: 30%;
 
             }
             .photo {
                     width:30%;
-                    height:100%;
                    }
-            .person {width:100%; height:100%;}
+            .person {width:60%;}
             .contact_details {
                     display:grid;
                     grid-template-columns: 30% 70%;
                     position:absolute;
-                    width:70%; height:100%;
+                    width:70%;
                     padding-top:1%;
                     padding-left:1%;
                     top:0;
@@ -58,7 +56,7 @@ body {
             .contact_details > div {
                             color:white;
                             font-size: 1.6vw;
-                            height:25%;
+                            margin-top:0.6%;
                             }
 
 
