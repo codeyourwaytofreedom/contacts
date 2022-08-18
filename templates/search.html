@@ -33,21 +33,23 @@
  </div>
 <div class="results">
 
-    <div class="employee_info">
+    {% for emp in test %}
+        <div class="employee_info">
 
         <div class="photo">
             <img class="person" src="static/person.svg">
         </div>
 
         <div class="contact_details">
-            <div>Name</div><div>{{test[0]}}</div>
-            <div>Mobile</div><div>{{test[1]}}</div>
-            <div>Extension</div><div>{{test[2]}}</div>
-            <div>Email</div><div>{{test[3]}}</div>
-            <div>Department</div><div>{{test[4]}}</div>
+            <div>Name</div><div>{{emp.name}}</div>
+            <div>Mobile</div><div>{{emp.email}}</div>
+            <div>Extension</div><div>{{emp.department}}</div>
+            <div>Email</div><div>{{emp.name}}</div>
+            <div>Department</div><div>{{emp.name}}</div>
         </div>
 
     </div>
+    {% endfor %}
 
 </div>
 
