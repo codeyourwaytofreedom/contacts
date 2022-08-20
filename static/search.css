@@ -1,6 +1,8 @@
 body {
         margin-top:0;
         background-color:#6F0319;
+        min-height:300px;
+        min-height:600px;
 
      }
 * {box-sizing: border-box;}
@@ -11,15 +13,19 @@ body {
             width:60%;
             background-image:linear-gradient(#ae7400, #da9100);
             margin-left:20%;
+            box-shadow: 0px 0px 20px 3px #6F0319 inset;
             }
 
 
 
 .results {
-                height: 65%;
                 width:60%;
+                height:100%;
                 margin-left:20%;
                 background-image:linear-gradient(#da9100, #ffaf12);
+                box-shadow: 0px 0px 20px 7px #6F0319 inset;
+
+
          }
 
 .search_box {
@@ -36,7 +42,8 @@ body {
 
 .employee_info {
             position:relative;
-            border: 2px solid white;
+            box-shadow: 0px 0px 20px 0px #6F0319 inset;
+            background-image:linear-gradient(#da9100,#FFA500);
 
             }
             .photo {
@@ -55,7 +62,7 @@ body {
                     }
             .contact_details > div {
                             color:white;
-                            font-size: 1.6vw;
+                            font-size: 2vw;
                             margin-top:0.6%;
                             }
 
@@ -127,3 +134,98 @@ input[type=checkbox]:checked + label:before {
   border-color: MediumSeaGreen;
   color: #fff;
 }
+
+@media all and (max-width:1000px) {
+
+                            .checkbox_row {
+                                            width:85%; height:25%;
+                                            left:7%; top:42%;
+                                              }
+                            .search_box {
+                                                width:85%; height:17%;
+                                                font-size:2vw;
+                                                top:68%; left: 7%;
+                                            }
+                            .checkbox1, .checkbox2 {
+                                                    height:70%;
+                                                  }
+                            input[type=checkbox] + label {
+                                                              font-size:2vw;
+
+                                                        }
+                            input[type=checkbox] + label:before {
+                                                                    width: 0.81em;
+                                                                    height: 0.81em;
+                                                                }
+                            .employee_info {
+                                                height:18%;
+                                            }
+                            .contact_details > div {
+                                                        font-size: 2.2vw;
+                                                    }
+
+
+
+
+@media all and (max-width:700px) {
+                            .title      {
+                                            width:80%;
+                                            margin-left:10%;
+                                        }
+                            .results {
+                                            width:80%;
+                                            margin-left:10%;
+                                     }
+                            .checkbox_row {
+                                            width:85%; height:25%;
+                                            left:7%;
+                                              }
+                            .search_box {
+                                                width:85%; height:17%;
+                                                font-size:2.5vw;
+                                                left: 7%;
+                                            }
+                            .checkbox1, .checkbox2 {
+                                                    height:70%;
+                                                  }
+                            input[type=checkbox] + label {
+                                                              font-size:2.5vw;
+
+                                                        }
+                            input[type=checkbox] + label:before {
+                                                                    width: 0.81em;
+                                                                    height: 0.81em;
+                                                                }
+                            .employee_info {
+                                                height:18%;
+                                            }
+                            .contact_details > div {
+                                                        font-size: 2.7vw;
+                                                    }
+
+
+                                     }
+@media all and (max-width:600px) {
+                                    .contact_details > div {
+                                                            font-size: 3.1vw;
+                                                            }
+                                    .contact_details    {
+                                                            width:80%;
+                                                            }
+                                    .photo {
+                                                width:20%;
+                                               }
+                                    .person {width:100%;}
+
+                                    .search_box {
+                                                font-size:3vw;
+                                            }
+                                    input[type=checkbox] + label {
+                                                              font-size:2.7vw;
+
+                                                        }
+                                    input[type=checkbox] + label:before {
+                                                                    width: 1em;
+                                                                    height: 1em;
+                                                                }
+                                  }
