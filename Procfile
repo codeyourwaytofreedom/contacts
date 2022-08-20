@@ -1,1 +1,1 @@
-web:gunicorn main:contact_finder
+web: gunicorn main:contact_finder
